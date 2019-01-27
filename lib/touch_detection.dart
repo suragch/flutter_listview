@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class StaticListViewScreen extends StatelessWidget {
+class TouchDetectionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Static ListView')),
+      appBar: AppBar(title: Text('Touch detection')),
       body: BodyLayout(),
     );
   }
@@ -17,40 +17,30 @@ class BodyLayout extends StatelessWidget {
   }
 }
 
-
 Widget _myListView(BuildContext context) {
   return ListView(
     children: <Widget>[
       ListTile(
         title: Text('Sun'),
+        trailing: Icon(Icons.keyboard_arrow_right),
+        onTap: () {
+          print('Sun');
+        },
       ),
       ListTile(
         title: Text('Moon'),
+        trailing: Icon(Icons.keyboard_arrow_right),
+        onTap: () {
+          print('Moon');
+        },
       ),
       ListTile(
         title: Text('Star'),
+        trailing: Icon(Icons.keyboard_arrow_right),
+        onTap: () {
+          print('Star');
+        },
       ),
     ],
   );
 }
-
-// with dividers
-
-//Widget _myListView(BuildContext context) {
-//  return ListView(
-//    children: ListTile.divideTiles(
-//      context: context,
-//      tiles: [
-//        ListTile(
-//          title: Text('Sun'),
-//        ),
-//        ListTile(
-//          title: Text('Moon'),
-//        ),
-//        ListTile(
-//          title: Text('Star'),
-//        ),
-//      ],
-//    ).toList(),
-//  );
-//}
