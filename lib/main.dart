@@ -1,4 +1,6 @@
+
 import 'package:flutter/material.dart';
+import 'package:flutter_listview/static_listview.dart';
 
 void main() => runApp(MyApp());
 
@@ -26,63 +28,33 @@ class BodyLayout extends StatelessWidget {
   }
 }
 
-Widget _myListView(BuildContext context) {
-  return ListView.separated(
-    itemCount: 1000,
-    itemBuilder: (context, index) {
-      return ListTile(
-        title: Text('row $index'),
-      );
-    },
-    separatorBuilder: (context, index) {
-      return Divider();
-    },
-  );
-}
 
-Widget _mainMenuListView(BuildContext context) {
+Widget _myListView(BuildContext context) {
   return ListView(
     children: <Widget>[
       ListTile(
         title: Text('Static ListView'),
         trailing: Icon(Icons.keyboard_arrow_right),
         onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => StaticListView()),
-          );
+          _staticListView(context);
         },
       ),
       ListTile(
-        title: Text('Dynamic ListView'),
+        title: Text('Moon'),
+        trailing: Icon(Icons.keyboard_arrow_right),
+      ),
+      ListTile(
+        title: Text('Star'),
         trailing: Icon(Icons.keyboard_arrow_right),
       ),
     ],
   );
 }
 
-class StaticListView extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('Static ListView')),
-      body: _myListView(),
-    );
-  }
-
-  Widget _myListView() {
-    return ListView(
-      children: <Widget>[
-        ListTile(
-          title: Text('Sun'),
-        ),
-        ListTile(
-          title: Text('Moon'),
-        ),
-        ListTile(
-          title: Text('Star'),
-        ),
-      ],
-    );
-  }
+void _staticListView(BuildContext context) {
+  Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => StaticListViewScreen()),
+  );
 }
+
