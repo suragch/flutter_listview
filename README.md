@@ -4,7 +4,7 @@ A demo app in Flutter about using ListViews (and AnimatedLists).
 
 This is a supplement to the tutorial [Mastering Flutter ListViews](TODO).
 
-![](suplemental/demo.gif)
+![](supplemental/demo.gif)
 
 ## Setup
 
