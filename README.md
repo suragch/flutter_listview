@@ -1,4 +1,4 @@
-# flutter_saving_data
+# Flutter ListView
 
 A demo app in Flutter about using ListViews (and AnimatedLists).
 
